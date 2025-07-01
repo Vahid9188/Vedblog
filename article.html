@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+{% if article %}
+ <div class="container mt-4">
+        <h2>{{ article.title }}</h2>
+        <p class="text-muted"><strong>Yazar:</strong> {{ article.author }}</p>
+        <p class="text-muted"><strong>Yayın Tarixi:</strong> {{ article.created_date }}</p>
+        <hr>
+        <p>{{ article.content | safe }}</p>
+    </div>
+
+{% else %}
+<div class="alert alert-warning">
+    Böyle makale bulunmuyor
+</div>
+{% endif %}
+
+{% endblock  %}
